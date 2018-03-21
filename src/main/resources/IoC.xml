@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <bean id="giamdoc" class="sonat.minhngoc.entity.GiamDoc">
+    <constructor-arg value="giam doc"/>
+    <constructor-arg value="Nguyen Minh Chau"/>
+    <constructor-arg value="18"/>
+  </bean>
+
+  <bean id="giamdoc1" class="sonat.minhngoc.entity.GiamDoc">
+    <constructor-arg value="giam doc"/>
+    <constructor-arg value="Nguyen Minh Chau1"/>
+    <constructor-arg value="18"/>
+  </bean>
+
+  <bean id="giamdoc2" class="sonat.minhngoc.entity.GiamDoc">
+    <constructor-arg value="giam doc"/>
+    <constructor-arg value="Nguyen Minh Chau2"/>
+    <constructor-arg value="18"/>
+  </bean>
+
+
+  <bean id="nhanvien" class="sonat.minhngoc.entity.NhanVien">
+    <!--<property name="tennhanvien" value="Tran Minh Ngoc"/>-->
+    <!--<property name="tuoi" value="18"/>-->
+    <!--<property name="diachi" value="Huong Non"/>-->
+    <!--<constructor-arg value="Nguyen Minh Chau"/>-->
+    <!--<constructor-arg value="19"/>-->
+    <constructor-arg ref="giamdoc"/>
+    <property name="list">
+      <list>
+        <!--<value>Tran Minh Chau</value>-->
+        <!--<value>Nguyen Thanh Minh</value>-->
+        <!--<value>Tran Tuyet Trinh</value>-->
+        <ref bean="giamdoc"/>
+        <ref bean="giamdoc1"/>
+        <ref bean="giamdoc2"/>
+      </list>
+
+    </property>
+  </bean>
+  <!--<bean id="nhanvien1" factory-bean="nhanvien" factory-method="createNhanVien"/>-->
+
+
+</beans>
